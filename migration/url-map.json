@@ -1,0 +1,16 @@
+{
+  "/": "/",
+  "/about/": "/about",
+  "/services/": "/services",
+  "/destinations/": "/study-destinations",
+  "/ceos-message/": "/about/ceo-message",
+  "/success-stories/": "/success-stories",
+  "/certifications/": "/certifications",
+  "/gallery/": "/gallery",
+  "/institutions-represented-by-life/": "/institutions",
+  "/usa/": "/institutions/united-states",
+  "/united-kingdom/": "/institutions/united-kingdom",
+  "/canada/": "/institutions/canada",
+  "/australia/": "/institutions/australia",
+  "/contact/": "/contact"
+}

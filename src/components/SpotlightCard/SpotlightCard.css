@@ -1,0 +1,39 @@
+.spotlight-card {
+  --spotlight-x: 50%;
+  --spotlight-y: 50%;
+  --spotlight-color: rgba(72, 138, 255, 0.20);
+  --spotlight-radius: 420px;
+  position: relative;
+  isolation: isolate;
+  height: 100%;
+}
+
+.spotlight-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  opacity: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    var(--spotlight-radius) circle at var(--spotlight-x) var(--spotlight-y),
+    var(--spotlight-color),
+    transparent 42%
+  );
+  transition: opacity 220ms ease;
+}
+
+.spotlight-card:hover::before,
+.spotlight-card:focus-within::before {
+  opacity: 1;
+}
+
+.spotlight-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+@media (hover: none), (prefers-reduced-motion: reduce) {
+  .spotlight-card::before { display: none; }
+}

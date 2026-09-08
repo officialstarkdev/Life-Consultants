@@ -1,0 +1,32 @@
+.glare-hover {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.glare-hover__sweep {
+  position: absolute;
+  z-index: 4;
+  inset: -45% auto -45% -70%;
+  width: 38%;
+  pointer-events: none;
+  opacity: 0;
+  transform: rotate(18deg) translateX(-40%);
+  background: linear-gradient(90deg, transparent, var(--glare-color), transparent);
+  filter: blur(.3px);
+}
+
+.glare-hover:hover .glare-hover__sweep,
+.glare-hover:focus-within .glare-hover__sweep {
+  animation: glare-sweep var(--glare-duration) cubic-bezier(.22,1,.36,1) both;
+}
+
+@keyframes glare-sweep {
+  0% { left: -70%; opacity: 0; }
+  18% { opacity: .58; }
+  100% { left: 135%; opacity: 0; }
+}
+
+@media (hover: none), (prefers-reduced-motion: reduce) {
+  .glare-hover__sweep { display: none; }
+}
