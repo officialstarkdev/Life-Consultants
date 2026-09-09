@@ -20,7 +20,7 @@ const moreLinks = [
   ['Gallery', '/gallery'],
 ] as const;
 
-type DropdownName = 'about' | 'more';
+type DropdownName = 'more';
 
 const routePreloaders: Record<string, () => Promise<unknown>> = {
   '/': () => import('../pages/Home'),
@@ -107,29 +107,7 @@ export default function Header() {
           <nav className="hidden xl:flex self-stretch items-center gap-5 2xl:gap-7 text-[13px] font-bold ml-auto">
             <NavLink to="/" end className={navClass} onMouseEnter={() => warmRoute('/')} onFocus={() => warmRoute('/')} onClick={() => setDropdown(null)}>Home</NavLink>
 
-            <div
-              className="nav-menu-anchor"
-              onMouseEnter={() => openDropdown('about')}
-              onMouseLeave={scheduleDropdownClose}
-              onFocus={() => openDropdown('about')}
-              onBlur={(event) => {
-                if (!event.currentTarget.contains(event.relatedTarget as Node | null)) scheduleDropdownClose();
-              }}
-            >
-              <NavLink to="/about" className="block" onMouseEnter={() => warmRoute('/about')} onFocus={() => warmRoute('/about')}>
-                {({ isActive }) => (
-                  <span className={`site-nav-link inline-flex items-center gap-1 ${isActive ? 'is-active' : ''}`}>
-                    About <ChevronDown size={14} />
-                  </span>
-                )}
-              </NavLink>
-              {dropdown === 'about' && (
-                <div className="nav-dropdown w-52" onMouseEnter={clearCloseTimer} onMouseLeave={scheduleDropdownClose}>
-                  <Link to="/about/ceo-message" onMouseEnter={() => warmRoute('/about/ceo-message')} onFocus={() => warmRoute('/about/ceo-message')} onClick={closeAll}>CEO's Message</Link>
-                  <Link to="/about#team" onClick={closeAll}>Our Team</Link>
-                </div>
-              )}
-            </div>
+            <NavLink to="/about" className={navClass} onMouseEnter={() => warmRoute('/about')} onFocus={() => warmRoute('/about')} onClick={() => setDropdown(null)}>About</NavLink>
 
             <NavLink to="/services" className={navClass} onMouseEnter={() => warmRoute('/services')} onFocus={() => warmRoute('/services')} onClick={() => setDropdown(null)}>Services</NavLink>
             <NavLink to="/study-destinations" className={navClass} onMouseEnter={() => warmRoute('/study-destinations')} onFocus={() => warmRoute('/study-destinations')} onClick={() => setDropdown(null)}>Study Destinations</NavLink>
