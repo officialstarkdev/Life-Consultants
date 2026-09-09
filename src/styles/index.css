@@ -358,3 +358,21 @@ body { margin:0; font-family:Inter,system-ui,sans-serif; color:#172033; backgrou
 .service-page-card:focus-visible,
 .team-card:focus-within,
 .contact-office-card:focus-within { outline:3px solid rgba(22,93,255,.3); outline-offset:3px; }
+
+
+/* Responsive layout tuning */
+.container-site { width: min(1220px, calc(100% - 48px)); }
+@media (max-width: 1024px) {
+  .container-site { width: min(100% - 32px, 900px); }
+  .section-pad { padding: 72px 0; }
+}
+@media (max-width: 768px) {
+  .container-site { width: calc(100% - 32px); }
+  .section-pad { padding: 56px 0; }
+  .title-xl { font-size: clamp(2rem, 9vw, 3rem); }
+  .title-lg { font-size: clamp(1.7rem, 7vw, 2.4rem); }
+}
+/* Avoid desktop layouts collapsing into mobile at tablet/small laptops */
+@media (min-width: 769px) and (max-width: 1200px) {
+  .container-site { width: calc(100% - 64px); }
+}

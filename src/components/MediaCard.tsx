@@ -11,14 +11,16 @@ interface MediaCardProps {
 export default function MediaCard({ post, index }: MediaCardProps) {
   const reduce = useReducedMotion();
   const isVideo = Boolean(post.video);
+  const videoId = post.video?.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([^?&/]+)/)?.[1];
+  const imageSrc = post.thumbnail || (videoId ? `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg` : undefined);
 
   const cardContent = (
     <div className="h-full flex flex-col">
       {/* Thumbnail Container (Edge-to-Edge 16:9 Aspect Ratio) */}
       <div className="relative aspect-video w-full overflow-hidden bg-slate-100 shrink-0">
-        {post.thumbnail && (
+        {imageSrc && (
           <img
-            src={post.thumbnail}
+            src={imageSrc}
             alt={post.title}
             loading="lazy"
             decoding="async"

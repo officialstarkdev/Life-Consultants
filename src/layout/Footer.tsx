@@ -1,4 +1,34 @@
 import { Link } from 'react-router-dom';
-import { Mail, MapPin, Phone } from 'lucide-react';
+import { Mail, MapPin, Phone, Facebook, Instagram, Youtube } from 'lucide-react';
 import { company } from '../data/company';
-export default function Footer(){return <footer className="bg-[#061124] text-white/75 pt-20"><div className="container-site grid md:grid-cols-2 lg:grid-cols-4 gap-10 pb-14"><div><div className="text-white font-display text-xl font-extrabold">LIFE CONSULTANTS</div><p className="mt-5 text-sm leading-7">Life Consultants & Law Associates provides expert visa and study abroad services, guiding clients through every step to secure their global opportunities.</p></div><div><h3 className="text-white font-bold">Quick Links</h3><div className="mt-5 grid gap-3 text-sm">{[['Home','/'],['About','/about'],['Services','/services'],['Destinations','/study-destinations'],['Institutions','/institutions'],['Success Stories','/success-stories']].map(x=><Link className="hover:text-white" to={x[1]} key={x[0]}>{x[0]}</Link>)}</div></div><div><h3 className="text-white font-bold">Services</h3><div className="mt-5 grid gap-3 text-sm"><span>Career Counselling</span><span>IELTS Preparation</span><span>Admission Support</span><span>Pre-Visa Counselling</span><span>Visa Counselling</span><span>Travel Assistance</span></div></div><div><h3 className="text-white font-bold">Offices</h3><div className="mt-5 grid gap-4 text-sm leading-6"><div className="flex gap-3"><MapPin className="shrink-0" size={18}/><span>{company.pakistanOffice}</span></div><div className="flex gap-3"><Phone className="shrink-0" size={18}/><span>{company.phone}</span></div><div className="flex gap-3"><Mail className="shrink-0" size={18}/><span>{company.email}</span></div><div className="pt-2 text-white font-semibold">UK Office</div><div>{company.ukOffice}</div></div></div></div><div className="border-t border-white/10"><div className="container-site py-6 text-sm flex flex-col sm:flex-row justify-between gap-3"><span>Copyright © {new Date().getFullYear()} Life Consultants. All Rights Reserved.</span><span>Established 1999 · Lahore & Mitcham</span></div></div></footer>}
+
+const socials = [
+  { name: 'TikTok', href: 'https://www.tiktok.com/@life.consultants', icon: '♪' },
+  { name: 'Instagram', href: 'https://www.instagram.com/lifeconsultants.pk/', icon: Instagram },
+  { name: 'Facebook', href: 'https://www.facebook.com/thelifeconsultants', icon: Facebook },
+  { name: 'YouTube', href: 'https://www.youtube.com/@lifeconsultants7952', icon: Youtube },
+  { name: 'Google Maps', href: 'https://www.google.com/maps/place/Life+Consultants/@31.5533923,74.3200613,17z', icon: MapPin },
+];
+
+export default function Footer(){
+return <footer className="bg-[#061124] text-white/75 pt-20">
+  <div className="container-site grid md:grid-cols-2 lg:grid-cols-4 gap-10 pb-14">
+    <div>
+      <div className="text-white font-display text-xl font-extrabold">LIFE CONSULTANTS</div>
+      <p className="mt-5 text-sm leading-7">Life Consultants & Law Associates provides expert visa and study abroad services, guiding clients through every step to secure their global opportunities.</p>
+      <div className="mt-6 flex items-center gap-3">
+        {socials.map(({name, href, icon: Icon}) => (
+          <a key={name} href={href} target="_blank" rel="noreferrer" aria-label={name}
+             className="h-10 w-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white/10 transition">
+             {typeof Icon === 'string' ? <span className="font-bold text-lg">{Icon}</span> : <Icon size={20}/>}
+          </a>
+        ))}
+      </div>
+    </div>
+    <div><h3 className="text-white font-bold">Quick Links</h3><div className="mt-5 grid gap-3 text-sm">{[['Home','/'],['About','/about'],['Services','/services'],['Destinations','/study-destinations'],['Institutions','/institutions'],['Success Stories','/success-stories']].map(x=><Link className="hover:text-white" to={x[1]} key={x[0]}>{x[0]}</Link>)}</div></div>
+    <div><h3 className="text-white font-bold">Services</h3><div className="mt-5 grid gap-3 text-sm"><span>Career Counselling</span><span>IELTS Preparation</span><span>Admission Support</span><span>Pre-Visa Counselling</span><span>Visa Counselling</span><span>Travel Assistance</span></div></div>
+    <div><h3 className="text-white font-bold">Offices</h3><div className="mt-5 grid gap-4 text-sm leading-6"><div className="flex gap-3"><MapPin className="shrink-0" size={18}/><span>{company.pakistanOffice}</span></div><div className="flex gap-3"><Phone className="shrink-0" size={18}/><span>{company.phone}</span></div><div className="flex gap-3"><Mail className="shrink-0" size={18}/><span>{company.email}</span></div><div className="pt-2 text-white font-semibold">UK Office</div><div>{company.ukOffice}</div></div></div>
+  </div>
+  <div className="border-t border-white/10"><div className="container-site py-6 text-sm flex flex-col sm:flex-row justify-between gap-3"><span>Copyright © {new Date().getFullYear()} Life Consultants. All Rights Reserved.</span><span>Established 1999 · Lahore & Mitcham</span></div></div>
+</footer>
+}

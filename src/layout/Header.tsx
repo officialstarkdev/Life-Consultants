@@ -145,12 +145,6 @@ export default function Header() {
             </div>
           </nav>
 
-          <div className="hidden xl:flex items-center ml-1">
-            <SpecularLink to="/contact#consultation" compact onMouseEnter={() => warmRoute('/contact')} onFocus={() => warmRoute('/contact')}>
-              Free Consultation
-            </SpecularLink>
-          </div>
-
           <CardNav
             open={mobileOpen}
             onOpenChange={setMobileOpen}
