@@ -1,4 +1,9 @@
-export const galleryImages = [
+export interface GalleryItem {
+  src: string;
+  objectPosition?: string;
+}
+
+export const galleryImages: (string | GalleryItem)[] = [
   '/images/gallery/008_WhatsApp-Image-2025-02-04-at-4.50.30-PM-768x511.jpeg',
   '/images/gallery/009_WhatsApp-Image-2025-02-04-at-5.07.04-PM-1-768x576.jpeg',
   '/images/gallery/010_WhatsApp-Image-2025-02-04-at-5.07.04-PM-768x432.jpeg',
@@ -7,11 +12,11 @@ export const galleryImages = [
   '/images/gallery/013_WhatsApp-Image-2025-02-04-at-5.07.08-PM-768x512.jpeg',
   '/images/gallery/014_WhatsApp-Image-2025-02-04-at-5.07.06-PM-768x432.jpeg',
   '/images/gallery/015_WhatsApp-Image-2025-02-04-at-5.07.07-PM-2.jpeg',
-  '/images/gallery/016_WhatsApp-Image-2025-02-04-at-5.07.08-PM-1.jpeg',
+  { src: '/images/gallery/016_WhatsApp-Image-2025-02-04-at-5.07.08-PM-1.jpeg', objectPosition: 'center 18%' },
   '/images/gallery/017_WhatsApp-Image-2025-02-04-at-5.07.07-PM.jpeg',
   '/images/gallery/018_WhatsApp-Image-2025-02-04-at-5.07.07-PM-1.jpeg',
-  '/images/gallery/019_WhatsApp-Image-2025-02-04-at-5.07.06-PM-1.jpeg',
-] as const;
+  { src: '/images/gallery/019_WhatsApp-Image-2025-02-04-at-5.07.06-PM-1.jpeg', objectPosition: 'center 38%' },
+];
 
 export const successStoryImages = [
   '/images/success_stories/032_ChatGPT-Image-May-14-2026-02_58_28-PM-819x1024.png',
