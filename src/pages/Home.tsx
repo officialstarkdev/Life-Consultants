@@ -35,6 +35,7 @@ import { posts } from '../data/blog';
 import { useSEO } from '../hooks/useSEO';
 import DestinationCard from '../components/DestinationCard';
 import InstitutionCard from '../components/InstitutionCard';
+import MediaCard from '../components/MediaCard';
 import SpotlightCard from '../components/SpotlightCard/SpotlightCard';
 import GlareHover from '../components/GlareHover/GlareHover';
 import { SpecularLink } from '../components/SpecularButton/SpecularButton';
@@ -868,40 +869,15 @@ export default function Home() {
       {/* Latest News & Videos */}
       <section className="section-pad">
         <div className="container-site">
-          <div className="flex justify-between items-end gap-5">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-5 mb-10">
             <SectionTitle eyebrow="Latest Updates" title="News, videos & blog" />
-            <Link to="/blog" className="text-blue-600 font-bold flex gap-2 items-center">
+            <Link to="/blog" className="text-blue-600 font-bold flex gap-2 items-center hover:underline shrink-0">
               View all <ArrowRight size={18} />
             </Link>
           </div>
-          <div className="grid md:grid-cols-3 gap-5 mt-10 items-stretch">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
             {posts.slice(0, 3).map((post, i) => (
-              <MotionReveal delay={i * 0.07} key={post.slug} className="h-full">
-                <a
-                  href={post.video || `/blog/${post.slug}`}
-                  target={post.video ? '_blank' : undefined}
-                  rel={post.video ? 'noreferrer' : undefined}
-                  className="video-card group"
-                >
-                  <div className="video-card__media">
-                    {post.thumbnail && <img src={post.thumbnail} alt="" loading="lazy" />}
-                    <div className="video-card__shade" />
-                    <PlayCircle className="video-card__play" size={56} />
-                  </div>
-                  <div className="p-6 flex flex-col flex-1">
-                    <div className="text-blue-600 text-xs font-bold uppercase tracking-widest">
-                      {post.category} · {post.date}
-                    </div>
-                    <h3 className="font-display text-xl font-bold mt-2 text-[#0b1733] group-hover:text-blue-600 transition">
-                      {post.title}
-                    </h3>
-                    <p className="mt-3 text-sm text-slate-600 leading-6">{post.excerpt}</p>
-                    <span className="mt-auto pt-5 inline-flex items-center gap-2 text-blue-600 font-bold text-sm">
-                      Watch Video <ArrowRight size={16} />
-                    </span>
-                  </div>
-                </a>
-              </MotionReveal>
+              <MediaCard key={post.slug} post={post} index={i} />
             ))}
           </div>
         </div>

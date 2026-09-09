@@ -8,7 +8,7 @@ const heroImages: Record<string, string> = {
   success: '/images/hero/success-hero.png',
   gallery: '/images/hero/gallery-hero.png',
   certifications: '/images/hero/certifications-hero.png',
-  blog: '/images/gallery/010_WhatsApp-Image-2025-02-04-at-5.07.04-PM-768x432.jpeg',
+  blog: '/images/hero/blog-hero.png',
   contact: '/images/hero/contact-hero.png',
   about: '/images/hero/about-hero.png',
   leadership: '/images/owner_team/shahid-ghani-ceo-message.jpeg',

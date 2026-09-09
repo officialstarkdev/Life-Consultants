@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+<defs>
+  <linearGradient id="g3" x1="0" y1="0" x2="1" y2="1">
+    <stop stop-color="#07152f"/>
+    <stop offset="1" stop-color="#0e3768"/>
+  </linearGradient>
+  <radialGradient id="r3">
+    <stop stop-color="#d4af37" stop-opacity=".38"/>
+    <stop offset="1" stop-color="#d4af37" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+<rect width="1200" height="800" fill="url(#g3)"/>
+<circle cx="1020" cy="140" r="440" fill="url(#r3)"/>
+<circle cx="150" cy="710" r="300" fill="url(#r3)" opacity=".55"/>
+<path d="M0 590 C270 490 440 760 740 605 S1060 470 1200 560 V800 H0Z" fill="#fff" opacity=".045"/>
+<g font-family="Arial,Helvetica,sans-serif" fill="#fff">
+  <text x="74" y="90" font-size="25" font-weight="700" letter-spacing="5" fill="#d4af37">STUDY DESTINATIONS</text>
+  <text x="74" y="580" font-size="110" font-weight="800" opacity=".12">EUROPE</text>
+  <text x="74" y="670" font-size="52" font-weight="800">Study in Germany &amp; Hungary</text>
+</g>
+</svg>
