@@ -11,8 +11,6 @@ interface MediaCardProps {
 export default function MediaCard({ post, index }: MediaCardProps) {
   const reduce = useReducedMotion();
   const isVideo = Boolean(post.video);
-  const targetUrl = isVideo ? post.video : `/blog/${post.slug}`;
-  const isExternal = isVideo;
 
   const cardContent = (
     <div className="h-full flex flex-col">
@@ -87,9 +85,9 @@ export default function MediaCard({ post, index }: MediaCardProps) {
       }}
       className="h-full"
     >
-      {isExternal ? (
+      {isVideo && post.video ? (
         <a
-          href={targetUrl}
+          href={post.video}
           target="_blank"
           rel="noreferrer"
           className={containerClasses}
@@ -97,7 +95,7 @@ export default function MediaCard({ post, index }: MediaCardProps) {
           {cardContent}
         </a>
       ) : (
-        <Link to={targetUrl} className={containerClasses}>
+        <Link to={`/blog/${post.slug}`} className={containerClasses}>
           {cardContent}
         </Link>
       )}
