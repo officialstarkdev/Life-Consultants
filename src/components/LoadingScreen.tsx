@@ -11,13 +11,13 @@ export default function LoadingScreen({ label = 'Loading page' }: { label?: stri
         animate={reduce ? undefined : { opacity: 1, y: 0, scale: 1 }}
         transition={{ duration: 0.24, ease: [0.2, 0.8, 0.2, 1] }}
       >
-        <motion.div
-          className="app-loader__mark"
-          animate={reduce ? undefined : { scale: [1, 1.06, 1] }}
+        <motion.img
+          src="/images/brand/logo.png"
+          alt="Life Consultants"
+          className="h-12 w-auto object-contain"
+          animate={reduce ? undefined : { scale: [1, 1.05, 1] }}
           transition={{ duration: 1.1, repeat: Infinity, ease: 'easeInOut' }}
-        >
-          LC
-        </motion.div>
+        />
         <div className="app-loader__copy">
           <strong>Life Consultants</strong>
           <span>{label}</span>
