@@ -14,7 +14,15 @@ export default function Footer(){
 return <footer className="bg-[#061124] text-white/75 pt-20">
   <div className="container-site grid md:grid-cols-2 lg:grid-cols-4 gap-10 pb-14">
     <div>
-      <div className="text-white font-display text-xl font-extrabold">LIFE CONSULTANTS</div>
+      <Link to="/" className="inline-block">
+        <img
+          src="/images/brand/logo-white.png"
+          alt="Life Consultants & Law Associates"
+          width={150}
+          height={75}
+          className="w-[150px] h-[75px] object-contain object-left"
+        />
+      </Link>
       <p className="mt-5 text-sm leading-7">Life Consultants & Law Associates provides expert visa and study abroad services, guiding clients through every step to secure their global opportunities.</p>
       <div className="mt-6 flex items-center gap-3">
         {socials.map(({name, href, icon: Icon}) => (

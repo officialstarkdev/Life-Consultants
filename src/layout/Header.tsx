@@ -96,12 +96,12 @@ export default function Header() {
     <header className={`site-header fixed inset-x-0 top-0 z-50 ${transparent ? 'site-header--transparent' : 'site-header--solid'}`}>
       <div className="site-header__surface">
         <div className="h-20 flex items-center justify-between gap-5 px-4 sm:px-5 lg:px-7 xl:px-8">
-          <Link to="/" className="site-logo" aria-label="Life Consultants home" onClick={closeAll}>
-            <span className="site-logo__mark" aria-hidden="true">LC</span>
-            <span className="site-logo__text">
-              <strong>LIFE CONSULTANTS</strong>
-              <small>&amp; LAW ASSOCIATES</small>
-            </span>
+          <Link to="/" className="site-logo flex items-center" aria-label="Life Consultants home" onClick={closeAll}>
+            <img
+              src="/images/brand/logo.png"
+              alt="Life Consultants & Law Associates"
+              className="h-12 sm:h-14 w-auto object-contain transition-transform hover:scale-105"
+            />
           </Link>
 
           <nav className="hidden xl:flex self-stretch items-center gap-5 2xl:gap-7 text-[13px] font-bold ml-auto">
