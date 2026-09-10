@@ -3,10 +3,10 @@ import { Mail, MapPin, Phone, Facebook, Instagram, Youtube } from 'lucide-react'
 import { company } from '../data/company';
 
 const socials = [
-  { name: 'TikTok', href: 'https://www.tiktok.com/@life.consultants', icon: '♪' },
-  { name: 'Instagram', href: 'https://www.instagram.com/lifeconsultants.pk/', icon: Instagram },
   { name: 'Facebook', href: 'https://www.facebook.com/thelifeconsultants', icon: Facebook },
+  { name: 'Instagram', href: 'https://www.instagram.com/lifeconsultants.pk/', icon: Instagram },
   { name: 'YouTube', href: 'https://www.youtube.com/@lifeconsultants7952', icon: Youtube },
+  { name: 'TikTok', href: 'https://www.tiktok.com/@life.consultants', icon: '♪' },
   { name: 'Google Maps', href: 'https://www.google.com/maps/place/Life+Consultants/@31.5533923,74.3200613,17z', icon: MapPin },
 ];
 
